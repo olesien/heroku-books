@@ -6,7 +6,7 @@ const userValidationRules = require("../validation/user");
 
 /* GET / */
 router.get("/", (req, res, next) => {
-	res.send({ success: true, data: { msg: "oh, hi" } });
+    res.send({ success: true, data: { msg: "oh, hi there v2" } });
 });
 
 router.use("/authors", require("./authors"));
@@ -21,8 +21,8 @@ router.post("/refresh", authController.refresh);
 
 // register a new user
 router.post("/register", [
-	userValidationRules.createRules,
-	authController.register,
+    userValidationRules.createRules,
+    authController.register,
 ]);
 
 module.exports = router;
